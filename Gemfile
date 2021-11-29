@@ -21,7 +21,9 @@ end
 group :development do
   gem 'annotate', '~> 3.1', '>= 3.1.1'
   gem 'brakeman', '~> 5.1', '>= 5.1.2'
+  gem 'bundle-audit', '~> 0.1.0'
   gem 'fasterer', '~> 0.9.0'
+  gem 'lefthook', '~> 0.7.7'
   gem 'listen', '~> 3.3'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'spring'
