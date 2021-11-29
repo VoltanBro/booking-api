@@ -4,12 +4,14 @@ require:
   - rubocop-rspec
 
 AllCops:
+  TargetRubyVersion: 2.7
   NewCops: enable
   Exclude:
     - 'config/**/*'
     - 'db/**/*'
     - 'lib/**/*'
     - 'bin/**/*'
-    
+    - vendor/bundle/**/*
+
 Documentation:
   Enabled: false
