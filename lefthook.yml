@@ -1,0 +1,11 @@
+# lefthook.yml
+
+pre-commit:
+  parallel: true
+  commands:
+    rubocop:
+      run: rubocop -p
+    brakeman:
+      run: brakeman --no-pager
+    bundle_audit:
+      run: bundle audit --update
