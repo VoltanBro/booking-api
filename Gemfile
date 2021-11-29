@@ -13,6 +13,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate', '~> 3.1', '>= 3.1.1'
   gem 'listen', '~> 3.3'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'spring'

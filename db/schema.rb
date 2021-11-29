@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2021_11_29_144939) do
   enable_extension "plpgsql"
 
   create_table "real_estate_properties", force: :cascade do |t|
-    t.integer "guests", default: 1
-    t.integer "bed_room", default: 0
-    t.integer "bed", default: 0
-    t.integer "bath", default: 0
+    t.integer "guests", default: 1, null: false
+    t.integer "bed_room", default: 0, null: false
+    t.integer "bed", default: 0, null: false
+    t.integer "bath", default: 0, null: false
     t.boolean "kitchen", default: false
     t.boolean "wifi", default: false
     t.boolean "parking", default: false
@@ -33,17 +33,17 @@ ActiveRecord::Schema.define(version: 2021_11_29_144939) do
   end
 
   create_table "real_estates", force: :cascade do |t|
-    t.decimal "price", null: false
+    t.decimal "price", precision: 8, scale: 2, null: false
     t.string "country", null: false
     t.string "city", null: false
     t.string "street", null: false
     t.string "building", null: false
     t.string "zip", null: false
-    t.float "rating", default: 0.0
+    t.float "rating", default: 0.0, null: false
     t.datetime "check_in", null: false
     t.datetime "check_out", null: false
-    t.integer "property_type", default: 0
-    t.integer "property_status", default: 0
+    t.integer "property_type", default: 0, null: false
+    t.integer "property_status", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
