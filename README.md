@@ -1,24 +1,27 @@
-# README
+# Hi there!
+## Welcome to Booking-API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![rails](https://github.com/VoltanBro/booking-api/actions/workflows/rails.yml/badge.svg)](https://github.com/VoltanBro/booking-api/actions/workflows/rails.yml)
 
-Things you may want to cover:
+Booking-API it's my free pet-project
 
-* Ruby version
+- Pretty simple
+- Pretty nice
+- ✨Magic ✨
 
-* System dependencies
+## Features
 
-* Configuration
+- Postgres as DB
+- Nice Swagger API Docs
 
-* Database creation
+## Installation
 
-* Database initialization
+Booking-API requires Ruby 2.7+ to run.
 
-* How to run the test suite
+Install the dependencies start the server.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+git clone git@github.com:VoltanBro/booking-api.git
+cd booking-api
+rails s
+```
