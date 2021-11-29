@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: real_estates
@@ -20,6 +22,6 @@
 class RealEstate < ApplicationRecord
   has_one :real_estate_property, dependent: :destroy
 
-  enum property_type: [ :apartment ]
-  enum property_status: [ :available ]
+  enum property_type: { apartment: 0 }
+  enum property_status: { available: 0 }
 end

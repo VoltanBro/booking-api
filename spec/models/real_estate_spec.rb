@@ -20,8 +20,7 @@
 #  updated_at      :datetime         not null
 #
 RSpec.describe RealEstate, type: :model do
-
-  context 'fields' do
+  describe 'fields' do
     it { is_expected.to have_db_column(:price).of_type(:decimal).with_options(null: false) }
     it { is_expected.to have_db_column(:country).of_type(:string).with_options(null: false) }
     it { is_expected.to have_db_column(:city).of_type(:string).with_options(null: false) }
@@ -34,7 +33,7 @@ RSpec.describe RealEstate, type: :model do
     it { is_expected.to have_db_column(:property_status).of_type(:integer).with_options(default: :available) }
   end
 
-  context 'associations' do
+  describe 'associations' do
     it { is_expected.to have_one(:real_estate_property).dependent(:destroy) }
   end
 end

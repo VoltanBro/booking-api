@@ -24,7 +24,7 @@
 #  index_real_estate_properties_on_real_estate_id  (real_estate_id)
 #
 RSpec.describe RealEstateProperty, type: :model do
-  context 'fields' do
+  describe 'fields' do
     it { is_expected.to have_db_column(:guests).of_type(:integer).with_options(default: 1, null: false) }
     it { is_expected.to have_db_column(:bed_room).of_type(:integer).with_options(default: 0, null: false) }
     it { is_expected.to have_db_column(:bed).of_type(:integer).with_options(default: 0, null: false) }
@@ -37,7 +37,7 @@ RSpec.describe RealEstateProperty, type: :model do
     it { is_expected.to have_db_column(:description).of_type(:string).with_options(null: false) }
   end
 
-  context 'associations' do
+  describe 'associations' do
     it { is_expected.to belong_to(:real_estate) }
   end
 end
