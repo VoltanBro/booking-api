@@ -1,6 +1,6 @@
 class CreateRealEstates < ActiveRecord::Migration[6.1]
   def change
-    create_table :real_estates do |t|
+    create_table :real_estates, id: :uuid  do |t|
       t.decimal :price, precision: 8, scale: 2, null: false
       t.string :country, null: false
       t.string :city, null: false

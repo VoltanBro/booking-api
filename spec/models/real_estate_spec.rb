@@ -4,7 +4,7 @@
 #
 # Table name: real_estates
 #
-#  id              :bigint           not null, primary key
+#  id              :uuid             not null, primary key
 #  building        :string           not null
 #  check_in        :datetime         not null
 #  check_out       :datetime         not null

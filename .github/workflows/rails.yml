@@ -63,7 +63,7 @@ jobs:
         env:
           RAILS_ENV: test
           RAILS_MASTER_KEY: ${{ secrets.MASTER_KEY }}
-        run: bundle exec rails db:migrate:reset # Runs: db:drop, db:create, db:migrate
+        run: bundle exec rails db:drop db:create db:migrate
 
       - name: Set up Node 14.13.0
         uses: actions/setup-node@v1

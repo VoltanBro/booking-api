@@ -1,6 +1,6 @@
 class CreateRealEstateProperties < ActiveRecord::Migration[6.1]
   def change
-    create_table :real_estate_properties do |t|
+    create_table :real_estate_properties, id: :uuid do |t|
       t.integer :guests, default: 1, null: false
       t.integer :bed_room, default: 0, null: false
       t.integer :bed, default: 0, null: false

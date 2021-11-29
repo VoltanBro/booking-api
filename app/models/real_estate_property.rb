@@ -4,7 +4,7 @@
 #
 # Table name: real_estate_properties
 #
-#  id             :bigint           not null, primary key
+#  id             :uuid             not null, primary key
 #  backyard       :boolean          default(FALSE)
 #  bath           :integer          default(0), not null
 #  bed            :integer          default(0), not null
