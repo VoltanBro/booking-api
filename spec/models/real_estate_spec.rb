@@ -42,4 +42,8 @@ RSpec.describe RealEstate, type: :model do
   describe 'associations' do
     it { is_expected.to have_one(:real_estate_property).dependent(:destroy) }
   end
+
+  describe 'indexes' do
+    it { is_expected.to have_db_index(%i[rentable_type rentable_id]) }
+  end
 end

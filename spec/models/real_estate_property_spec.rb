@@ -40,4 +40,8 @@ RSpec.describe RealEstateProperty, type: :model do
   describe 'associations' do
     it { is_expected.to belong_to(:real_estate) }
   end
+
+  describe 'indexes' do
+    it { is_expected.to have_db_index(:real_estate_id) }
+  end
 end
