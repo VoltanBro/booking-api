@@ -7,21 +7,22 @@ Booking-API it's my free pet-project
 
 - Pretty simple
 - Pretty nice
-- ✨Magic ✨
+- ✨Magic✨
 
 ## Features
 
 - Postgres as DB
-- Nice Swagger API Docs
+- Nice Swagger API Docs (soon)
 
 ## Installation
 
 Booking-API requires Ruby 2.7+ to run.
 
-Install the dependencies start the server.
+Install the dependencies and start the server.
 
 ```sh
 git clone git@github.com:VoltanBro/booking-api.git
 cd booking-api
+bundle install
 rails s
 ```

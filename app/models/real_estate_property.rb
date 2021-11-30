@@ -4,7 +4,7 @@
 #
 # Table name: real_estate_properties
 #
-#  id             :bigint           not null, primary key
+#  id             :uuid             not null, primary key
 #  backyard       :boolean          default(FALSE)
 #  bath           :integer          default(0), not null
 #  bed            :integer          default(0), not null
@@ -17,7 +17,7 @@
 #  wifi           :boolean          default(FALSE)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  real_estate_id :bigint
+#  real_estate_id :uuid             not null
 #
 # Indexes
 #
