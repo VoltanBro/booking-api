@@ -17,4 +17,6 @@
 #
 class User < ApplicationRecord
   has_secure_password
+
+  has_many :real_estates, as: :rentable, dependent: :nullify
 end

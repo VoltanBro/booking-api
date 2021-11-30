@@ -14,10 +14,16 @@
 #  property_status :integer          default("available"), not null
 #  property_type   :integer          default("apartment"), not null
 #  rating          :float            default(0.0), not null
+#  rentable_type   :string
 #  street          :string           not null
 #  zip             :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  rentable_id     :uuid
+#
+# Indexes
+#
+#  index_real_estates_on_rentable  (rentable_type,rentable_id)
 #
 RSpec.describe RealEstate, type: :model do
   describe 'fields' do

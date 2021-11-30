@@ -7,12 +7,12 @@ Booking-API it's my free pet-project
 
 - Pretty simple
 - Pretty nice
-- ✨Magic ✨
+- ✨Magic✨
 
 ## Features
 
 - Postgres as DB
-- Nice Swagger API Docs
+- Nice Swagger API Docs (soon)
 
 ## Installation
 

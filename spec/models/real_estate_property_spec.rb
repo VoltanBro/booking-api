@@ -17,7 +17,7 @@
 #  wifi           :boolean          default(FALSE)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  real_estate_id :bigint
+#  real_estate_id :uuid             not null
 #
 # Indexes
 #

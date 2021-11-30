@@ -12,6 +12,7 @@ class CreateRealEstates < ActiveRecord::Migration[6.1]
       t.datetime :check_out, null: false
       t.integer :property_type, default: 0, null: false
       t.integer :property_status, default: 0, null: false
+      t.references :rentable, type: :uuid, polymorphic: true
 
       t.timestamps
     end

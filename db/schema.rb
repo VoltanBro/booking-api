@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_213523) do
     t.boolean "backyard", default: false
     t.boolean "pets_allowed", default: false
     t.string "description", null: false
-    t.bigint "real_estate_id"
+    t.uuid "real_estate_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["real_estate_id"], name: "index_real_estate_properties_on_real_estate_id"
@@ -45,8 +45,11 @@ ActiveRecord::Schema.define(version: 2021_11_29_213523) do
     t.datetime "check_out", null: false
     t.integer "property_type", default: 0, null: false
     t.integer "property_status", default: 0, null: false
+    t.string "rentable_type"
+    t.uuid "rentable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["rentable_type", "rentable_id"], name: "index_real_estates_on_rentable"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
