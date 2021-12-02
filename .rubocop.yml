@@ -13,5 +13,12 @@ AllCops:
     - 'bin/**/*'
     - vendor/bundle/**/*
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+RSpec/MultipleExpectations:
+  Max: 10
+
 Documentation:
   Enabled: false
