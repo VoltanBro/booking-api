@@ -16,7 +16,9 @@ module Auth
     end
 
     def authenticate
-      context.fail!(error: I18n.t('sessions.errors.invalid_password'), status: :unauthorized) unless context.user.authenticate(params[:password])
+      if context.user.authenticate(params[:password])
+        context.fail!(error: I18n.t('sessions.errors.invalid_password'), status: :unauthorized)
+      end
     end
 
     def tokens
@@ -27,7 +29,6 @@ module Auth
     def payload
       { email: context.user.email }
     end
-
 
     def params
       context.params

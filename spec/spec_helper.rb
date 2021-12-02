@@ -17,7 +17,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'rails_helper'
 require 'shoulda/matchers'
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].sort.each { |f| require f }
 RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)

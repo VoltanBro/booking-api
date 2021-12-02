@@ -16,12 +16,12 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'redis', '~> 4.5', '>= 4.5.1'
 
 group :development, :test do
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'ffaker', '~> 2.20.0'
   gem 'rubocop', '~> 1.23', require: false
   gem 'rubocop-performance', '~> 1.12', require: false
   gem 'rubocop-rails', '~> 2.12', '>= 2.12.4', require: false
   gem 'rubocop-rspec', '~> 2.6', require: false
-  gem 'factory_bot_rails', '~> 6.2'
-  gem 'ffaker', '~> 2.20.0'
 end
 
 group :development do
