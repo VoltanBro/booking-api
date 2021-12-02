@@ -1,5 +1,6 @@
 en:
   sessions:
     errors:
-      not_authorized: 'Not authorized'
-      user_not_found: 'User not found'
+      not_authorized: Not authorized
+      user_not_found: User not found
+      invalid_password: Password is invalid

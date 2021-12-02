@@ -5,13 +5,12 @@ module Api
     module Auth
       class SessionsController < AuthController
         def create
-          user = User.find_by!(email: params[:email])
-          if user.authenticate(params[:password])
-            payload = { user_id: user.id }
-            session = JWTSessions::Session.new(payload: payload)
-            render json: session.login
+          context = Auth::SessionCreator.call(params: params)
+
+          if context.success?
+            render json: context.tokens, status: :created
           else
-            render json: 'Invalid user', status: :unauthorized
+            render json: context.error, status: context.status
           end
         end
       end
