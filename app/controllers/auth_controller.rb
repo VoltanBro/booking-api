@@ -9,4 +9,8 @@ class AuthController < ApplicationController
   def not_authorized
     render json: { error: I18n.t('sessions.errors.not_authorized') }, status: :unauthorized
   end
+
+  def current_user
+    @current_user ||= User.find_by(payload['email'])
+  end
 end

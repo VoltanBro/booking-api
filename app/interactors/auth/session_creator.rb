@@ -16,13 +16,12 @@ module Auth
     end
 
     def authenticate
-      if context.user.authenticate(params[:password])
-        context.fail!(error: I18n.t('sessions.errors.invalid_password'), status: :unauthorized)
-      end
+      user = context.user.authenticate(params[:password])
+      context.fail!(error: I18n.t('sessions.errors.invalid_password'), status: :unauthorized) unless user.nil?
     end
 
     def tokens
-      session = JWTSessions::Session.new(payload: payload).login
+      session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true).login
       context.tokens = { access: session[:access], refresh: session[:refresh] }
     end
 
