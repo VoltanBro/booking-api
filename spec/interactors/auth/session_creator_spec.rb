@@ -32,5 +32,15 @@ describe Auth::SessionCreator do
         expect(context.error).to eq(I18n.t('sessions.errors.user_not_found'))
       end
     end
+
+    context 'when given invalid password' do
+      let(:invalid_password) { FFaker::Internet.password }
+      let(:params) { { email: user.email, password: invalid_password } }
+
+      it 'failure' do
+        expect(context).to be_a_failure
+        expect(context.error).to eq(I18n.t('sessions.errors.invalid_password'))
+      end
+    end
   end
 end
