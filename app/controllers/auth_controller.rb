@@ -11,6 +11,10 @@ class AuthController < ApplicationController
   end
 
   def current_user
-    @current_user ||= User.find_by(payload['email'])
+    @current_user ||= users_type.find_by(payload['email'])
+  end
+
+  def users_type
+    Constants::Auth :USERS_TYPE[params[:user_type]]
   end
 end

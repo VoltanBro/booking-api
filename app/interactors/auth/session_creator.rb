@@ -11,7 +11,7 @@ module Auth
     private
 
     def user
-      context.user = User.find_by(email: params[:email])
+      context.user = ::Constants::Auth::USERS_TYPE[params[:user_type]].find_by(email: params[:email])
       fail_context(I18n.t('sessions.errors.user_not_found'), :not_found) if context.user.blank?
     end
 

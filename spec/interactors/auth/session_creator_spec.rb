@@ -5,7 +5,7 @@ describe Auth::SessionCreator do
 
   let(:user) { create(:user, password: password) }
   let(:password) { FFaker::Internet.password }
-  let(:params) { { email: user.email, password: password } }
+  let(:params) { { email: user.email, password: password, user_type: 'user' } }
 
   context 'when SUCCESS' do
     context 'when given valid params' do
@@ -25,7 +25,7 @@ describe Auth::SessionCreator do
 
   context 'when FAILURE' do
     context 'when given invalid email' do
-      let(:params) { { email: FFaker::Lorem.word, password: password } }
+      let(:params) { { email: FFaker::Lorem.word, password: password, user_type: 'user' } }
 
       it 'failure' do
         expect(context).to be_a_failure
@@ -35,7 +35,7 @@ describe Auth::SessionCreator do
 
     context 'when given invalid password' do
       let(:invalid_password) { FFaker::Internet.password }
-      let(:params) { { email: user.email, password: invalid_password } }
+      let(:params) { { email: user.email, password: invalid_password, user_type: 'user' } }
 
       it 'failure' do
         expect(context).to be_a_failure

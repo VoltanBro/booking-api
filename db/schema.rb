@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_213523) do
+ActiveRecord::Schema.define(version: 2021_12_03_215443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "owners", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "email", null: false
+    t.string "password_digest", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_owners_on_email", unique: true
+  end
 
   create_table "real_estate_properties", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.integer "guests", default: 1, null: false
