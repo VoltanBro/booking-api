@@ -12,12 +12,12 @@ module Auth
 
     def user
       context.user = User.find_by(email: params[:email])
-      context.fail!(error: I18n.t('sessions.errors.user_not_found'), status: :not_found) if context.user.nil?
+      fail_context(I18n.t('sessions.errors.user_not_found'), :not_found) if context.user.blank?
     end
 
     def authenticate
       user = context.user.authenticate(params[:password])
-      context.fail!(error: I18n.t('sessions.errors.invalid_password'), status: :unauthorized) if user.nil?
+      fail_context(I18n.t('sessions.errors.invalid_password'), :unauthorized) if user.blank?
     end
 
     def tokens
